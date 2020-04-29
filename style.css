@@ -1,0 +1,179 @@
+/* VARIABLES */
+:root {
+  --main-color: #e2e5ec;
+  --primary-color: #d1404d;
+  --secondary-color: #818b97;
+  --btn-color: #e3e6ed;
+  --body-color: rgb(214, 217, 224);
+  --light-shadow-color: rgba(255, 255, 255, 0.4);
+  --dark-shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN STYLE */
+body {
+  background: var(--body-color);
+  font-family: "Baloo Bhaina 2", cursive;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+#container {
+  background: var(--main-color);
+  height: 600px;
+  width: 700px;
+  margin: auto;
+  align-self: center;
+  border-radius: 50px;
+  box-shadow: 15px 15px 40px var(--dark-shadow-color),
+    -15px -15px 40px rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15%;
+}
+
+.btn {
+  border: none;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-color: var(--btn-color);
+  box-shadow: 8px 8px 12px var(--dark-shadow-color),
+    -8px -8px 12px var(--light-shadow-color);
+  text-align: center;
+  /* margin: 1.2rem; */
+  color: var(--secondary-color);
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.btn:hover,
+#music-play:hover,
+#music-play:hover > div {
+  box-shadow: inset 5px 5px 8px var(--dark-shadow-color),
+    inset -8px -8px 12px var(--light-shadow-color);
+}
+
+.btn-primay {
+  color: var(--primary-color);
+}
+
+.play-btn {
+  font-size: 1.6rem;
+  width: 200px;
+  border-radius: 50px;
+  height: 73px;
+}
+
+.pause {
+  display: none;
+}
+
+#player .btn:first-child:hover .fa-play {
+  display: none;
+}
+
+#player .btn:first-child:hover .pause {
+  display: inline-block;
+}
+
+.play-btn i {
+  padding-right: 0.8rem;
+}
+
+#navbar,
+#player,
+#music-play {
+  width: 100%;
+  margin-bottom: 4.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#player {
+  margin-bottom: 4rem;
+}
+
+#music-play {
+  margin: 0 auto;
+  width: 490px;
+  height: 1.4rem;
+  background: var(--btn-color);
+  border-radius: 50px;
+  box-shadow: 8px 8px 12px var(--dark-shadow-color),
+    -8px -8px 12px var(--light-shadow-color);
+}
+
+#music-play > div {
+  height: 100%;
+  width: 40%;
+  background: var(--secondary-color);
+  border-radius: 50px;
+}
+
+#creator {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #999;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+#creator a {
+  text-decoration: none;
+  color: #888;
+  margin-top: 1rem;
+}
+
+#creator a:hover {
+  color: #444;
+}
+
+/* FOR SMARTPHONE */
+@media (max-width: 850px) and (max-height: 850px) {
+  #container {
+    height: 100%;
+    width: 90vw;
+    overflow: hidden;
+    padding: 5rem 2rem;
+  }
+
+  .btn {
+    height: 60px;
+    width: 60px;
+    font-size: 1.8rem;
+  }
+
+  .play-btn {
+    font-size: 1.2rem;
+    width: 45%;
+    height: 55px;
+  }
+
+  #music-play {
+    width: 100%;
+    height: 1rem;
+  }
+}
+
+@media (max-width: 390px) {
+  #container {
+    height: 100%;
+    padding: 5rem 1rem;
+  }
+}
+
+@media (max-height: 450px) {
+  body {
+    margin: 5% 0;
+  }
+}
